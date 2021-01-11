@@ -1,0 +1,156 @@
+
+
+\title{Assignment 1 -Probability and Random Variable}
+\author{Annu-EE21RESCH01010\thanks{GVV Sharma sir}}
+\date{\today}
+
+\documentclass[journal,12pt,twocoloums]{IEEEtran}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                 %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  
+ \begin{document}
+ \maketitle
+ 
+ \textbf{Problem Statement}- Generate samples of
+$V=-2 \ln (1-U)$ and plot its CDF and comment over it.\\
+\textbf{Solutions:}\\
+Given $U$ is uniformly distributed random variable over \in (0,1). \\
+
+
+
+
+$V$ is also a  random variable which is the function of uniformly distributed random variable $U$. 
+Below is probability density function of U. 
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $u$,
+    ylabel = {$f_U(u)$},
+]
+%Below the pdf red uniformly distributed U  is defined
+\addplot [
+    domain=0:1, 
+    samples=100, 
+    color=red,
+]
+{1};
+
+\end{axis}
+\draw[red] (6.8,0)--(6.8,2.8)
+\end{tikzpicture}
+$V = -2 \ln(1-U)$\\
+Cummulative distribution function of random variable V is defined as \\
+\begin{align*}
+    F_V(v) &= Pr(V \le v) \\
+           &= Pr( -2 \ln(1-U)\le v) \\
+           &= Pr(\ln(1-U) \ge( -v) /2)\\
+           &= Pr ((1-U) \ge \exp(-v/2))\\
+           &= Pr(U \le (1- exp(-v/2))\\
+           &=  (1-(exp(-v/2))
+\end{align*}
+$F_V(v) = 1- exp(-v/2)$\\
+$ v = F_V(inv(U))$
+
+
+Now,the Generation of random samples can be easily done using above equation. Some samples are given below-\\
+Since $U \in [0,1]$,therefore $V$ is always positive and thus $V \ge 0$.
+\begin{itemize}
+\item 
+u=0 , v=0
+    \item 
+ u=0.9 ,v=4.605
+ \item
+ u=0.5 ,v=1.38
+ \item
+ u=0.75 ,v=2.77
+ \item
+ u=0.25 ,w v=0.5735
+ \item
+ u=.6 , v=1.8325
+\end{itemize}
+PDF of $V$ is the differentiation of CDF $F_V(v)$ with respect to v. 
+$ f_V(v) = \frac{d (F_V (v) )}{dv} 
+= exp((-v)/2)/2$\\
+Plot CDF of random Variable $V$ is given below
+
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $v$,
+    ylabel = {$F_V(v)$},
+]
+\addplot[
+domain = 1:10,
+samples=100,
+color=red,]
+{(1-e^((-x)/2))};
+
+%Here ends the first plot
+\end{axis}
+\end{tikzpicture}
+\hskip 5pt
+%Here begins the 2nd plot
+Probability density function of random variable $V$ is given by-
+
+\begin{tikzpicture}
+\begin{axis}[
+ xlabel=$v$,
+ ylabel= {$f_V(v)$}]
+\addplot[
+domain= 1:10,
+samples=100,
+color=red,
+]
+{exp((-x)/2)/2};
+\end{axis}
+\end{tikzpicture}\\
+
+
+\textbf{Comment:}
+Obtaining  the PDF for the function of random variable involves deriving a distribution.
+$V= function(U)$.\\
+The random variable is the function of another random variable.
+From the uniformly distributed random variable $U$, We get another random variable $V$ which is exponential in nature. From any known probability distribution, we can derive it's function probability distribution.
+Once we have CDF of random variable, we can easily get probability density function by just differentiating CDF. 
+From graph we can see CDF is always increasing(monotonically increasing function) 
+Note: Function of random variable is itself a random variable . 
+
+\bibliographystyle{IEEEtran}
+
+\end{document}
+        
