@@ -1,0 +1,89 @@
+\documentclass[journel,12pt]{IEEEtran}
+
+\title{Assignment 2 -Probability and Random Variable}
+\author{Annu-EE21RESCH01010}
+\date{13 January 2020}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                 %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                         %%
+  \providecommand{\nCr}[2]{\,^{#1}C_{#2}}
+  \providecommand{\nPr}[2]{\,^{#1}P_{#2}}
+ \begin{document}
+ 
+ \maketitle
+
+ 
+ 
+ \section{Problem Statement-Problem 1.10}
+There are 5 \% defective items in a large bulk of items. What is the probability that a sample of 10 items will include not more than one defective item?
+
+\section{Solutions}
+
+Let X be the number of defective items available in bulk of items. \\
+let n =10 ( total no. of samples=10)\\
+therefore, q=1-p ,which is probability of getting a non defective item\\
+\begin{align}
+    q=1-\frac{1}{20}=\frac{19}{20}
+\end{align}
+From bernaulli's distribution, we know\\
+\begin{align}
+    Pr(X=r)= \nCr{n}{r} p^r q^{n-r}\\
+    X \sim Bin(n=10,p=0.5)
+\end{align}
+We are required to find the probability that a sample of 10 items will not include more than 1 defective items\\
+
+
+
+
+Therefore, the required probability is given by\\
+\begin{align*}
+Pr(X \le 1)&=Pr(X=0)+Pr(X=1) \\
+              &=\nCr{10}{0}\left(\frac{1}{20}\right)^0 \left(\frac{19}{20}\right)^{10}+\nCr{10}{1} \left(\frac{1}{20}\right)^1 \left(\frac{19}{20}\right)^{9}\\
+              &=1\times 1\times \left(\frac{19}{20}\right) ^{10}+10\times\left(\frac{1}{20}\right)\times \left(\frac{19}{20}\right)^{9}\\
+              &=\left(\frac{19}{20}\right)^{10}+\left(\frac{19}{20}\right) ^{9}\times \frac{1}{2}\\
+              &=\left(\frac{29}{20}\right) \times\left (\frac{19}{20}\right) ^{9}\\
+\end{align*}
+Hence the desired probability is $\frac{29}{20}\times \frac{19}{20}^9$ =$ \frac{29}{20} \frac{19^9}{20^9}$
+=0.9138
+             
+
+
+
+
+
+\end{document}
+        
+
