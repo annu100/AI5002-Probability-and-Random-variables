@@ -1,0 +1,89 @@
+\documentclass[journel,12pt,twocoloums]{IEEEtran}
+
+\title{Assignment 3 -Probability and Random Variable}
+\author{Annu-EE21RESCH01010}
+\date{13 January 2020}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                 %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                         %%
+  \providecommand{\nCr}[2]{\,^{#1}C_{#2}}
+  \providecommand{\nPr}[2]{\,^{#1}P_{#2}}
+ \begin{document}
+ \maketitle
+%\href{}{}
+ \section{Problem Statement-Problem 2.10}
+Bag I contains 3 red and 4 black balls and
+Bag II contains 4 red and 5 black balls. One
+ball is transferred from Bag I to Bag II and
+then a ball is drawn from Bag II. The ball
+so drawn is found to be red in colour. Find
+the probability that the transferred ball is black.
+\section{Solutions}
+Bag 1 contains 3 red and 4 black balls.\\
+Bag 2 contains 4 red and 5 black balls.\\
+
+let  C1: Event of transferring black ball from bag 1 to 2\\
+let  C1: Event of transferring red ball from bag 1 to 2\\
+let A : Event that the ball drawn from 2 is red after the transfer of a ball from bag 1 to bag 2.\\
+\begin{align*}
+Pr(C1)= \frac{4}{7}\\
+Pr(C2)=\frac{3}{7}\\
+Pr(A/C1)=\frac{4}{10}=\frac{2}{5}\\
+Pr(A/C2)=\frac{5}{10}=\frac{1}{2}\\
+\text{From Baye's theoram} \\
+Pr(\text{Drawn ball is red})&=P(A)\\
+                     &=Pr(\frac{A}{C1})\times   Pr(C1)+Pr{C2}\times Pr(\frac{A}{C2})\\
+                     &=\frac{4}{10}\times \frac{4}{7}+\frac{5}{10}\times \frac{3}{7}\\
+                     &=\frac{16+15}{70}\\
+                     &=\frac{31}{70}
+\end{align*}
+
+
+The probability that the transferred ball is black\\
+It is equal to conditional probability of C1 when event A has already happened\\
+The desired probability is given by\\
+\begin{align*}
+Pr(\frac{C1}{A})&=\frac{Pr(C1 \cap A)}{Pr(A)}\\
+        &=\frac{Pr(\frac{A}{C1})Pr(C1)}{Pr(A)}\\
+        &=\frac{\frac{4}{10} \times \frac{4}{7}}{\frac{31}{70}}\\
+        &=\frac{16}{31}
+\end{align*}
+
+Hence the desired probability is $$\frac{16}{31}=0.516$$
+            
+\end{document}
+        
+
