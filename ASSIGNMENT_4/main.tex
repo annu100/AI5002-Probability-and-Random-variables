@@ -54,10 +54,14 @@ columns=fullflexible
 \begin{lstlisting}
  https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main/ASSIGNMENT_4
  \end{lstlisting}
+ \textbf{download python code from here}\\
+ \begin{lstlisting}
+  https://github.com/annu100/AI5002-Probability-and-Random-variables/blob/main/ASSIGNMENT_4/assignment_4.py
+ \end{lstlisting}
  \section{Problem Statement-Problem 3.10}
 How many times must a man toss a fair coin
 so that the probability of having at least one
-head is more than 90%?
+head is more than 90 \%?
 \section{Solutions}
 
 Let r be the number for getting no. of  heads. \\
@@ -71,9 +75,10 @@ From bernaulli's distribution, we know\\
 \begin{align}
     Pr(X=r)= \nCr{n}{r} p^r q^{n-r}  \\
     X \sim Bin(n,p=0.5)
-\end{align}
+\end{align}\\
+
 We are required to find the number of trials such that the sample  probability of having at least one
-head is more than 90%\\
+head is more than 90\%\\
 \begin{align}
     Pr(X \ge 1) &=1-Pr(X=0)\\
                 &=1-\nCr{n}{0} 0.5^0 0.5^{n-0} >0.9 \\
@@ -86,9 +91,24 @@ This implies $n \ge 4$
 
 Therefore, the required number of trials must be greater than or equal to 4.From graph,we can also see\\
 
-\includegraphics[width=\coloumnwidth]{Figure_1.png}
-\textbf{Above is is the graph of no. of trails versus probability }
-            
+\includegraphics[width=\columnwidth] {Figure_1.png}
+\textbf{Above is is the graph of no. of trails versus probability }\\ \includegraphics[width=\columnwidth] {fig.png}
+\textbf{Above is is the graph of binomial random number generated versus probability(cdf)}\\ 
+
+
+\textbf{The above result for $n\ge$ 4 is verified many times.}\\
+\begin{enumerate}
+\item
+Using mathematical calculation
+\item
+By seeing the grapgh of no. of trial versus probability
+
+\item
+Using binomial random numner generation in the python program by generating 1000 random numbers and then calculating probability.
+
+\item
+At last, a graph is drawn between random variables generated versus required probability,which is often calculated using CDF. This grapgh is random,since every simulation gives different random variables generation
+\end{enumerate}
 \end{document}
         
 
