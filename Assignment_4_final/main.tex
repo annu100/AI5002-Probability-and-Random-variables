@@ -65,13 +65,13 @@ head is more than 90 \%?
 \section{Solutions}
 
 Let r be the number for getting no. of  heads. \\
-let n =total no. of times a coin is tossed\\
 therefore, q=1-p ,which is probability of getting a tail.Since it is the case of fair coin, therefore p=0.5 and q =0.5\\
 \begin{align}
     p=\frac{1}{2} \\
     q=1-\frac{1}{2}=\frac{1}{2}
 \end{align}
 From bernaulli's distribution, we know\\
+let n =total no. of times a coin is tossed\\
 \begin{align}
     Pr(X=r)= \nCr{n}{r} p^r q^{n-r}  \\
     X \sim Bin(n,p=0.5)
@@ -92,15 +92,32 @@ This implies $n \ge 4$
 Therefore, the required number of trials must be greater than or equal to 4.From graph,we can also see\\
 
 \includegraphics[width=\columnwidth] {Figure_1.png}
-\textbf{Above is is the graph of no. of trails versus probability }\\ 
+\textbf{Above is is the graph of no. of trials versus probability }\\ 
 \includegraphics[width=\columnwidth] {fig.png}
-\textbf{Above is is the graph of binomial random number generated versus probability(cdf)}\\
-
-
+\textbf{Above is is the graph of binomial random number generated versus probability(cdf)}
 \includegraphics[width=\columnwidth] {fig3.png}
-\textbf{Above is is the graph of binomial random number generated versus probability(cdf)}\\
+\textbf{Above is is the graph of binomial random number generated versus probability\\($c1-binom.cdf(1,n,p)+binom.pmf(1,n,p)$)}\\
+\includegraphics[width=\columnwidth] {fig4.png}
+\textbf{Above is is the graph of binomial random number generated versus probability }\\
+\\
+\begin{figure}[h!]
+\centering
+\caption{cdf}
+\includegraphics[width=\columnwidth] {cdf_n=4.png}
+\end{figure}
+\\
+\textbf{Above is is the  number of success generated versus probability(cdf) for n=4}\\
+
+\begin{figure}[h!]
+\centering
+\caption{pmf}
+\includegraphics[width=\columnwidth] {pmf_n=4.png}
+\textbf{Above is is the graph of  number of success  versus probability(pmf) for n=4}\\
+\end{figure}
 
 \textbf{The above result for $n\ge$ 4 is verified many times.}\\
+
+\\
 \begin{enumerate}
 \item
 Using mathematical calculation
@@ -111,8 +128,9 @@ By seeing the grapgh of no. of trial versus probability
 Using binomial random numner generation in the python program by generating 1000 random numbers and then calculating probability.
 
 \item
-At last, a graph is drawn between random variables generated versus required probability,which is often calculated using CDF. This grapgh is random,since every simulation gives different random variables generation
+At last, a graph is drawn between random variables generated versus required probability,which is often calculated using CDF,probability=$1-binom.cdf(1,n,p)+binom.pmf(1,n,p)$ This grapgh is random,since every simulation gives different random variables generation
+\item
+A graph of CDF is also drawn in order to observe the properties associated with cdf of binomial R.V
 \end{enumerate}
 \end{document}
         
-
