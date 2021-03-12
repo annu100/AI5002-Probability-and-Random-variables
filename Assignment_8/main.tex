@@ -53,11 +53,11 @@ columns=fullflexible
  \maketitle
 \textbf{Download latex code from here-}\\
 \begin{lstlisting}
- https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main/ASSIGNMENT_8
+ https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main.tex/ASSIGNMENT_8
  \end{lstlisting}
  \textbf{Download python code from here-}\\
 \begin{lstlisting}
- https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main/ASSIGNMENT_8
+ https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main.py/ASSIGNMENT_8
  \end{lstlisting}
  \section{Problem Statement-Problem 6.18}
 
@@ -65,23 +65,23 @@ If  P(A) =$\frac{7}{13}$,
 , P(B) =$\frac{9}{13}$
 and 
 P(A $\cap$ B) = $\frac{4}{13}$.
-Evaluate P(A/B)?
+Evaluate $P(A|B)$?
 Simulation part -
-Also generate random variables according to 2 given probabilities and using simulated probabilities ,calculate P(A/B) and cross check with actual result of P(A/B) using baye's theoram formula.
+Also generate random variables according to 2 given probabilities and using simulated probabilities ,calculate $P(A|B)$ and cross check with actual result of $P(A|B)$ using baye's theoram formula.
 \section{SOLUTIONS}
 \subsection{Probability calculation}
 We know that for independent random variables,multiplication of probability 2 random variables must be equal to multiplication of individual probability of those random variables.
 P(A) =$\frac{7}{13}$
 P(B) =$\frac{9}{13}$
 P(A $\cap$ B) =$\frac{4}{13}$
-From baye's theoram ,we know that P(A/B)=P(A $\cap$ B)/P(B)
+From baye's theoram ,we know that $P(A|B)=\frac{P(A \cap B)}{P(B)}$
 \begin{align}
-         P(A/B) &= P(A \cap B)/P(B) \\
-                &=(\frac{4}{13})/(\frac{9}{13})\\
+         P(A|B) &= \frac{P(A \cap B)}{P(B)} \\
+                &=\frac{(\frac{4}{13})}{(\frac{9}{13}}
                 &=\frac{4}{9}
 \end{align}
 \\
-Therefore,P(A/B)=$\frac{4}{9}$
+Therefore,$P(A|B)=\frac{4}{9}$
 \begin{figure}
 
 \includegraphics[width=\columnwidth] {independence.png}
@@ -107,8 +107,8 @@ simulation probabilities are given by \\
 
 Probability for X=0 i.e P(A)is  0.48\\
 Probability for X=1 i.e P(B)is  0.52\\
-simulation versus actual probabilities for P(A/B)\\
-simulated prob is i.e P(A/B) 0.591715976331361\\
+simulation versus actual probabilities for $P(A|B)$\\
+simulated prob is i.e $P(A|B)$ 0.591715976331361\\
 using baye''s probabilities i.e P(A/B)is 
  0.4444444444444445\\
  
