@@ -84,32 +84,51 @@ $X=X_1-X_2$.
 
     \therefore P(X=x) = \binom{12}{6+x}\brak{\frac{1}{2}}^{12},x= -6\ \text{to}\ 6 
 \end{align}
- therefore,X can have any values between -6 to 6.
- 
+ therefore,X can have any values between -6 to 6.\\
+\\textbf{}Convolution of Bernoulli distributions}
+The convolution of two independent identically distributed Bernoulli random variables is a binomial random variable.
+
+{\displaystyle \sum _{i=1}^{2}\mathrm {Bernoulli} (p)\sim \mathrm {Binomial} (2,p)}{\displaystyle \sum _{i=1}^{2}\mathrm {Bernoulli} (p)\sim \mathrm {Binomial} (2,p)}\\
+\text{To show this let}
+
+{\displaystyle X_{i}\sim \mathrm {Bernoulli} (p),\quad 0<p<1,\quad 1\leq i\leq 2}X_{i}\sim {\mathrm  {Bernoulli}}(p),\quad 0<p<1,\quad 1\leq i\leq 2
+\text{and define}
+
+{\displaystyle Y=\sum _{i=1}^{2}X_{i}}{\displaystyle Y=\sum _{i=1}^{2}X_{i}}\\
+\text{Also, let Z denote a generic binomial random variable:}\\
+
+{\displaystyle Z\sim \mathrm {Binomial} (2,p)\,\!},{\displaystyle Z\sim \mathrm {Binomial} (2,p)\,\!}\\
+\text{Using probability mass functions}
+\text{As} {\displaystyle X_{1}{\text{ and }}X_{2}}X_{1}{\text{ and }}X_{2} \text{are independent,}
+
+{\displaystyle {\begin{aligned}\mathbb {P} [Y=n]&=\mathbb {P} \left[\sum _{i=1}^{2}X_{i}=n\right]\\&=\sum _{m\in \mathbb {Z} }\mathbb {P} [X_{1}=m]\times \mathbb {P} [X_{2}=n-m]\\&=\sum _{m\in \mathbb {Z} }\left[{\binom {1}{m}}p^{m}\left(1-p\right)^{1-m}\right]\left[{\binom {1}{n-m}}p^{n-m}\left(1-p\right)^{1-n+m}\right]\\&=p^{n}\left(1-p\right)^{2-n}\sum _{m\in \mathbb {Z} }{\binom {1}{m}}{\binom {1}{n-m}}\\&=p^{n}\left(1-p\right)^{2-n}\left[{\binom {1}{0}}{\binom {1}{n}}+{\binom {1}{1}}{\binom {1}{n-1}}\right]\\&={\binom {2}{n}}p^{n}\left(1-p\right)^{2-n}=\mathbb {P} [Z=n]\end{aligned}}}{\displaystyle {\begin{aligned}\mathbb {P} [Y=n]&=\mathbb {P} \left[\sum _{i=1}^{2}X_{i}=n\right]\\&=\sum _{m\in \mathbb {Z} }\mathbb {P} [X_{1}=m]\times \mathbb {P} [X_{2}=n-m]\\&=\sum _{m\in \mathbb {Z} }\left[{\binom {1}{m}}p^{m}\left(1-p\right)^{1-m}\right]\left[{\binom {1}{n-m}}p^{n-m}\left(1-p\right)^{1-n+m}\right]\\&=p^{n}\left(1-p\right)^{2-n}\sum _{m\in \mathbb {Z} }{\binom {1}{m}}{\binom {1}{n-m}}\\&=p^{n}\left(1-p\right)^{2-n}\left[{\binom {1}{0}}{\binom {1}{n}}+{\binom {1}{1}}{\binom {1}{n-1}}\right]\\&={\binom {2}{n}}p^{n}\left(1-p\right)^{2-n}=\mathbb {P} [Z=n]\end{aligned}}}
 
 \section{Simulations}
 Question-Plot the sum and difference of 2 bernaulli random variables\\
-\subsection{Simulations-solutions}
 
 
-
-\begin{figure}
-\centering
+\begin{figure}[!htb]
 \includegraphics[width=\columnwidth] {pdf_A_B.png}
 \includegraphics[width=\columnwidth] {pdf_sum.png}
 \includegraphics[width=\columnwidth] {pdf_subtract.png}
+
+\end{figure}
+\begin{figure}[!htb]
+\includegraphics[width=\columnwidth] {cdf_A_and_B.png}
 \includegraphics[width=\columnwidth] {cdf_sum.png}
 \includegraphics[width=\columnwidth] {cdf_subtract.png}
 \end{figure}
+\subsection{Simulations-solutions}
 \\
 \\
-\\
-
 z=(x-$\mu$)/$\sigma$ \sim N(0,1)\\
 where\\
 $\mu$=n*p\\
 and $\sigma$=\sqrt{n*p(1-p)}\\
-\text{So,basically normal distributions are approximation of binomial distributions.}\\
+
+
+
+So,basically normal distributions are approximation of binomial distributions.\\
 
 PDF of 2 individual binomial random variables are plotted.\\
 
