@@ -90,17 +90,24 @@ $X=X_1-X_2$.
 \textbf{Convolution of Bernoulli distributions}\\
 The convolution of two independent identically distributed Bernoulli random variables is a binomial random variable.
 
-{\displaystyle \sum _{i=1}^{2}\mathrm {Bernoulli} (p)\sim \mathrm {Binomial} (2,p)}\\{\displaystyle \sum _{i=1}^{2}\mathrm {Bernoulli} (p)\sim \mathrm {Binomial} (2,p)}\\
+{\displaystyle \sum _{i=1}^{2}\mathrm {Bernoulli} (p)\sim \mathrm {Binomial} (2,p)}\\
+
+
 \text{To show this let}
 
-{\displaystyle X_{i}\sim \mathrm {Bernoulli} (p),\quad 0<p<1,\quad 1\leq i\leq 2}\\X_{i}\sim {\mathrm  {Bernoulli}}(p),\quad 0<p<1,\quad 1\leq i\leq 2
+{\displaystyle X_{i}\sim \mathrm {Bernoulli} (p),\quad 0<p<1,\quad 1\leq i\leq 2}\\
+
 \text{and define}
 
-{\displaystyle Y=\sum _{i=1}^{2}X_{i}}{\displaystyle Y=\sum _{i=1}^{2}X_{i}}\\
+{\displaystyle Y=\sum _{i=1}^{2}X_{i}}\\
 \text{Also, let Z denote a generic binomial random variable:}\\
 
-{\displaystyle Z\sim \mathrm {Binomial} (2,p)\,\!},{\displaystyle Z\sim \mathrm {Binomial} (2,p)\,\!}\\
+{\displaystyle Z\sim \mathrm {Binomial} (2,p)\,\!}\\
+
+
 \text{Using probability mass functions}\\
+\\
+
 \text{As} {\displaystyle X_{1}{\text{ and }}X_{2}}\text{are independent,}
 
 {\displaystyle {\begin{aligned}\mathbb {P} [Y=n]&=\mathbb {P} \left[\sum _{i=1}^{2}X_{i}=n\right]\\&=\sum _{m\in \mathbb {Z} }\mathbb {P} [X_{1}=m]\times \mathbb {P} [X_{2}=n-m]\\&=\sum _{m\in \mathbb {Z} }\left[{\binom {1}{m}}p^{m}\left(1-p\right)^{1-m}\right]\left[{\binom {1}{n-m}}p^{n-m}\left(1-p\right)^{1-n+m}\right]\\&=p^{n}\left(1-p\right)^{2-n}\sum _{m\in \mathbb {Z} }{\binom {1}{m}}{\binom {1}{n-m}}\\&=p^{n}\left(1-p\right)^{2-n}\left[{\binom {1}{0}}{\binom {1}{n}}+{\binom {1}{1}}{\binom {1}{n-1}}\right]\\&={\binom {2}{n}}p^{n}\left(1-p\right)^{2-n}=\mathbb {P} [Z=n]\end{aligned}}}{\displaystyle {\begin{aligned}\mathbb {P} [Y=n]&=\mathbb {P} \left[\sum _{i=1}^{2}X_{i}=n\right]\\&=\sum _{m\in \mathbb {Z} }\mathbb {P} [X_{1}=m]\times \mathbb {P} [X_{2}=n-m]\\&=\sum _{m\in \mathbb {Z} }\left[{\binom {1}{m}}p^{m}\left(1-p\right)^{1-m}\right]\left[{\binom {1}{n-m}}p^{n-m}\left(1-p\right)^{1-n+m}\right]\\&=p^{n}\left(1-p\right)^{2-n}\sum _{m\in \mathbb {Z} }{\binom {1}{m}}{\binom {1}{n-m}}\\&=p^{n}\left(1-p\right)^{2-n}\left[{\binom {1}{0}}{\binom {1}{n}}+{\binom {1}{1}}{\binom {1}{n-1}}\right]\\&={\binom {2}{n}}p^{n}\left(1-p\right)^{2-n}=\mathbb {P} [Z=n]\end{aligned}}}
@@ -108,7 +115,15 @@ The convolution of two independent identically distributed Bernoulli random vari
 \\
 \text{Thus,convolution of 2 binomial distributions is also binomial.}\\
 \\
-\section{Simulations}
+\section{Simulations-3.7 question}
+\begin{figure}[!htb]
+\includegraphics[width=\columnwidth] {Figure_1.png}
+\includegraphics[width=\columnwidth] {Figure_2.png}
+\includegraphics[width=\columnwidth] {Figure_3.png}
+
+\end{figure}
+
+\section{Simulations-Extra given by sir}
 Question-Plot the sum and difference of 2 bernaulli random variables\\
 
 
@@ -151,4 +166,3 @@ If x is a random variable with distribution Bin(n, p), then for sufficiently lar
 \end{document}
 
         
-
