@@ -1,0 +1,104 @@
+\documentclass[journel,12pt,twocoloums]{IEEEtran}
+
+\title{Challenging problem 8}
+\author{Annu-EE21RESCH01010}
+\date{13 January 2020}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}    %%
+    \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\vert#1\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E[ #1 ]}
+  \providecommand{\nCr}[2]{\,^{#1}C_{#2}}
+  \providecommand{\nPr}[2]{\,^{#1}P_{#2}}
+  \lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+ \begin{document}
+ \maketitle
+\textbf{Download latex code from here-}\\
+\begin{lstlisting}
+ https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main.tex/challenging problems
+ \end{lstlisting}
+
+ \section{Challenging problem 8}
+
+
+Let $X_1,X_2,.....,X_n$ be independent Poisson random variables with $\mean{X_i}=\mu_i$.Find the conditional distribution of $X_1,...,X_n\biggr\vert\sum_{i=1}^{n}X_i=y$
+
+\section{SOLUTIONS}
+
+\begin{flushleft}
+The random variable $X_i$ is distributed as Poisson if the density of $X_i$ is given by\\
+$\mean{X_i}=\mu_i$\\
+Also,
+$\Var{X_i}=\mu$\\
+$f(x_i:\mu_i)$=
+\begin{cases}
+\frac{\brak{e^{-\mu_i}} \times \mu ^{x_i}}{x_i !} & x_i \ge 0\\
+0 & otherwise
+\end{cases}
+Since $X_1,X_2,.....,X_n$ be independent Poisson random variables-\\
+Likelihood function L is required to be calculated and it is given by\\
+\begin{align}
+ L&=\frac{\brak{e^{-\mu_1}} \times \mu ^{x_1}}{x_1 !} \times \frac{\brak{e^{-\mu_2}} \times \mu ^{x_2}}{x_2 !} 
+ \cdot \cdot \cdot \frac{\brak{e^{-\mu_n}} \times \mu ^{x_n}}{x_n !} \\   
+  &= \frac{\brak{e^{-\mu_n}} \times \mu ^{\sum_{i=1}^{n} x_i}}{\prod_{i=1}^{n}x_i !}\\
+ \end{align}
+So,above case is only defined when\\
+$\sum_{i=1}^{n}X_i=y$ for some y\\
+otherwise L=0.\\
+Here L is the conditional distribution of $X_1,...,X_n\biggr\vert\sum_{i=1}^{n}X_i=y$\\
+Also sum of two independent Possion R.V is also R,V with mean as sum of mean of individual random variables which provides for the proof of above expression for L.
+
+
+\end{flushleft}
+
+
+
+\end{document}
+
+        
+

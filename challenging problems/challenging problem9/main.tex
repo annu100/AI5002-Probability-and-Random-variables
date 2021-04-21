@@ -1,0 +1,87 @@
+\documentclass[journel,12pt,twocoloums]{IEEEtran}
+
+\title{Challenging problems}
+\author{Annu-EE21RESCH01010}
+\date{13 January 2020}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  \providecommand{\nCr}[2]{\,^{#1}C_{#2}}
+  \providecommand{\nPr}[2]{\,^{#1}P_{#2}}
+  \lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+ \begin{document}
+ \maketitle
+\textbf{Download latex code from here-}\\
+\begin{lstlisting}
+ https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main.tex/challenging problems
+ \end{lstlisting}
+
+ \section{Challenging problem 9}
+
+Two points are chosen on a line of unit length.Find probability that each of 3 line segements have length greater than 1/4 is...........
+
+\section{SOLUTIONS}
+
+\begin{flushleft}
+Imagine choosing one point P1, and then a second point P2. We assume that "at random" means here that the distributions of X and Y are uniform on [0,1] and that P1 and P2 are independent.
+
+We want the probability that 1/4 $\ge$ P1 $\le$ 3/4 and 1/4 $\ge$ P2 $\le$ 3/4 and subtraction of P1 and P2 $\ge$ 1/4$.
+
+Draw the usual square. Draw the line x=$\frac{1}{4}$, x=$\frac{3}{4}$, y=$\frac{1}{4}$, y=$\frac{3}{4}$. By Looking at the K square bounded by these lines.\\
+
+Drawing the two lines subtraction of P1 and P2 is $\pm$ 1/4.\\
+We want to find the probability that (P1,P2). lands in the part of K that is not between these two lines. That consists of two isosceles right-angled triangles.
+\\
+Each of these triangles has legs 14, so their combined area is $$\frac{1}{16}$.
+
+
+
+
+\end{flushleft}
+
+
+
+\end{document}
+
+        
+
