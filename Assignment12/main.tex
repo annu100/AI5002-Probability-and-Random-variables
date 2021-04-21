@@ -1,0 +1,209 @@
+\documentclass[journel,12pt,twocoloums]{IEEEtran}
+
+\title{Assignment 12-Probability and Random Variable}
+\author{Annu-EE21RESCH01010}
+
+\date{13 January 2020}
+
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{pgfplots}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage{enumerate}	
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{multicol}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{array,multirow}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{hyperref}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+    %\usepackage[latin1]{inputenc}                                %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  \providecommand{\nCr}[2]{\,^{#1}C_{#2}}
+  \providecommand{\nPr}[2]{\,^{#1}P_{#2}}
+  \lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+ \begin{document}
+ \maketitle
+\textbf{Download latex code from here-}\\
+\begin{lstlisting}
+ https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main.tex/ASSIGNMENT_12
+ \end{lstlisting}
+\textbf{Download python code from here-}\\
+\begin{lstlisting}
+ https://github.com/annu100/AI5002-Probability-and-Random-variables/tree/main.py/ASSIGNMENT_12
+ \end{lstlisting}
+ \section{Ugc-Net june 2019-51}
+
+Consider a Markov Chain with state space {0,1,2,3,4} and transition matrix-\\
+
+\begin{math}
+P=\left[
+\begin{array}{c c c c c}
+    1 & 0 & 0 & 0 & 0\\
+    \frac{1}{3} & \frac{1}{3}  & \frac{1}{3}  & 0 & 0\\
+    0 & \frac{1}{3}  & \frac{1}{3}  & \frac{1}{3} & 0\\
+    0 & 0 & \frac{1}{3} & \frac{1}{3}  & \frac{1}{3}  \\
+    0 & 0 & 0 & 0 & 1
+\end{array}\right]
+\end{math}
+Then $\lim_{n \to \infty } {Pr_{23}}^n$ equals
+
+
+\section{SOLUTIONS}
+To understand this,let us first understand Discrete Time Markov Chain(DTMC).\\
+A stochastic process along with markov property makes a Discrete Time Markov Chain.\\
+$S_j$ here represents a state on our statespace.
+$Pr(X_{n+1}=S_j|X_n,X_{n-1},\ldots X_0)=Pr(X_{n+1}=S_j|X_n).$\\
+Further,the probabilistics are often fixed in time.\\
+Now,Time Homogeneous property/stationary property of MC is-\\
+\begin{align*}
+  Pr(X_{n+1}=S_j|X_n) &= Pr(X_1=S_j | X_0)\\
+                      &= Pr(X_2=S_j | X_1)\\
+                      &= Pr(X_3=S_j | X_2)\\
+                      &= Pr(X_4=S_j | X_3) 
+\end{align*}
+So.time homogeneous or stationary property means our one step transition probability are independent of time (n).\\
+
+Now consider the case when n tends to $\infty$.\\
+As sum of all elements in a row of probability transition matrix.So,\\
+\begin{math}
+Pr(X_{n+1}=S_j|X_n=S_i)=Pr_{ij}\\
+
+\sum_{j=1}^{N} Pr(X_{n+1}=S_j|X_n=S_i)=1\\
+
+\sum_{j=1}^{N} P{ij}=1\\
+\end{math}
+\\
+\textbf{Limiting behaviour of discrete time Markov Chain is}\\
+
+\begin{math}
+Pr(X_n=S_j) \text{as n tends to $\infty$ ,we need to find -}\\
+\text{let}  \pi_j \text{be stationary distribution of MC i.e }\\
+\pi_j =Pr(X_n=S_j|X_0=S_1)
+\end{math}
+\begin{align*}
+\lim_{n \to \infty}Pr(X_n=S_j) 
+ &= \lim_{n \to \infty} \sum_{i} Pr(X_n=S_j |X_0=S_i) \times Pr(X_0=S_i)\\
+ &=\sum_{i} \lim_{n \to \infty} Pr(X_n=S_j |X_0=S_i) \times Pr(X_0=S_i)\\
+ &= \sum_{i} \pi_j \times Pr(X_0=S_i)\\
+ &=\sum \pi_j \times Pr(X_0=S_i)\\
+ &=\pi_j \times \sum_{i} Pr(X_0=S_i)\\
+ &=\pi_j
+\end{align*}
+
+$\lim_{n \to \infty}Pr(X_n=S_j) =\pi_j$ irrespective of initial distribution i.e $Pr(X_0=S_j)$. \\
+This is limiting behaviour of DTMC\\
+
+\textbf{Stationary distribution}\\
+starting with initial distribution for inital state $X_0$\\
+\begin{math}
+\left[
+\begin{array}{c}
+    \pi_1\\
+    \pi_2\\
+    \pi_3\\
+    \vdots\\
+    \pi_N
+\end{array}\right]
+\end{math}
+\\
+$\pi_i=Pr(X_0=S_i)$\\
+\text{Now for stationary distribution- } 
+$\mathbf{\pi}^\intercal \mathbf{P}=\mathbf{\pi}$
+
+where $\pi$ is the stationary distribution.\\
+It is left eigen vector of probability ransition matrix $\mathbf{P}$ or eigen vector of $\mathbf{P}^ \intercal$\\
+let $\mathbf{A}=\mathbf{P}^\intercal$
+so,$|A-\lambda I|=0$ for eigen value calculation.\\
+and Eigen vector lies in null space of matrix $A-\lambda I$\\
+As it is 5*5 matrix,using python code for calculation of eigen values and eigen vector ,we get
+Eigen values are-\\
+$\lambda$1=1 , $\lambda$2=1, $\lambda$=0.804, $\lambda$4=-0.138, $\lambda$5=0.333\\
+Possible eigenvectors are: \\
+eigenvector 1:\\
+\begin{math}
+\left[
+\begin{array}{c}
+     1.0\\
+     0.\\
+     -5.445260\\
+     1.4340\\
+      -3.16
+\end{array}\right]
+\end{math}
+\\
+ eigenvector 2:\\
+\begin{math}
+\left[
+\begin{array}{c}
+      0\\
+      0\\
+      4.5\\
+      6.92\\
+      -5.26
+\end{array}\right]
+\end{math}
+\\
+eigenvector3:\\
+\begin{math}
+\left[
+\begin{array}{c}
+      0\\
+      0\\
+      3.189\\
+      -4.89\\
+      6.32
+\end{array}\right]
+\end{math}
+\\
+eigenvector4:\\
+\begin{math}
+\left[
+\begin{array}{c}
+      0\\
+      0\\
+      3.189\\
+      -4.89\\
+      -6.32
+\end{array}\right]
+\end{math}
+\\
+Now $\lim_{n \to \infty } {Pr_{n}}^n$ approaches a matrix which has structure that all rows of matrix are identical and each row will give limiting distribution and this limiting distribution corresponds to stationary distribution,\\
+
+So,from possible eigen vectors third value will be $\lim_{n \to \infty } {Pr_{23}}^n$.
+\\
+i.e.1.43,-4.89 or 6.92.\\ (according to my eigen vector obtained as for one eigen value ,eigen vector is not unique and we can get infinite eigen vectors).
+
+
+\end{document}
+
+        
+
