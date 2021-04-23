@@ -69,7 +69,9 @@ columns=fullflexible
 Let $X_1,X_2,.....,X_n$ be independent Poisson random variables with $\mean{X_i}=\mu_i$.Find the conditional distribution of $X_1,...,X_n\biggr\vert\sum_{i=1}^{n}X_i=y$
 
 \section{SOLUTIONS}
-
+\subsection{Likelihood approach to this problem}
+Definition of likelihood function-\\
+Given $\vec{x_1}=x_1 ,\vec{x_2}=x_2 , \ldots \vec{x_n}=x_n$ the joint\\ $pdf$ $f_x(x_1,x_2 \ldots x_n;y)$ is defined to be likelihood function.\\
 \begin{flushleft}
 The random variable $X_i$ is distributed as Poisson if the density of $X_i$ is given by\\
 $\mean{X_i}=\mu_i$\\
@@ -77,27 +79,63 @@ Also,
 $\Var{X_i}=\mu$\\
 $f(x_i:\mu_i)$=
 \begin{cases}
-\frac{\brak{e^{-\mu_i}} \times \mu ^{x_i}}{x_i !} & x_i \ge 0\\
-0 & otherwise
+\frac{\brak{e^{-\mu_i}} \times \mu ^{x_i}}{x_i !} & ,x_i \ge 0\\
+0 &, otherwise
 \end{cases}
+\\
 Since $X_1,X_2,.....,X_n$ be independent Poisson random variables-\\
 Likelihood function L is required to be calculated and it is given by\\
 \begin{align}
  L&=\frac{\brak{e^{-\mu_1}} \times \mu ^{x_1}}{x_1 !} \times \frac{\brak{e^{-\mu_2}} \times \mu ^{x_2}}{x_2 !} 
  \cdot \cdot \cdot \frac{\brak{e^{-\mu_n}} \times \mu ^{x_n}}{x_n !} \\   
   &= \frac{\brak{e^{-\mu_n}} \times \mu ^{\sum_{i=1}^{n} x_i}}{\prod_{i=1}^{n}x_i !}\\
- \end{align}
+\end{align}
 So,above case is only defined when\\
 $\sum_{i=1}^{n}X_i=y$ for some y\\
 otherwise L=0.\\
 Here L is the conditional distribution of $X_1,...,X_n\biggr\vert\sum_{i=1}^{n}X_i=y$\\
 Also sum of two independent Possion R.V is also R,V with mean as sum of mean of individual random variables which provides for the proof of above expression for L.
-
-
 \end{flushleft}
 
+\subsection{Estimation theory approach to this problem}
+\textbf{Sufficient statistics}\\
+A function $T(\vec{x})=T(x_1,x_2,\ldots,x_n)$ is said to be sufficient statistic for y if $T(\vec{x})$ contains all information about y that is contained in the data set i.e given the probability density \\
+$Pr(\vec{x}_1=x_1,\vec{x_2}=x_2 \ldots \vec{x_n}=x_n ;y)$\\
+if $Pr(\vec{x_1}=x_1,\vec{x_2}=x_2 \ldots \vec{x_n}=x_n ;y=T(\vec{x}))$\\
+does not depend on y for all possible values of $x_i$, then $T(\vec{x})$ must contain all information about y that is contained in sample set $\vec{x}.$\\
 
+Thus the statistic $T(\vec{x})$ is said to be sufficient if the conditional $p.d.f$ \\
+$f(x_1,x_2, \ldots x_n;y|T(\vec{x})=t)$ does not depend on y.\\
+This function is also known as likelihood function.\\
+Now for our problem\\
+$x_1,x_2 \ldots x_n$ be i.i.d Poisson distributed ,let us say $P(\mu)$and consider the function\\
+$T(\vec{x})=T(x_1,x_2,\ldots,x_n) = \sum_{i=1}^{n} \vec{x_i}$.\\
+Then,\\
+$Pr(\vec{x_1}=x_1,\myvec{x_2}=x_2 \ldots \vec{x_n}=x_n ;y=T(\vec{x})$=
+\begin{cases}
+$Pr(\vec{x_1}=x_1,\vec{x_2}=x_2 \ldots \vec{x_n}=t-(x_1+x_2 \ldots \ldots x_{n-1}))$ & ,\text{such that}\\
+t=\sum_{i=1}^{n} x_i\\
+0 & ,\text{such that}\\
+t \ne \sum_{i=1}^{n} x_i
+\end{cases}
+\\
+But as we know $T(x) \sim P(n \mu)$.Thus\\
+\begin{align}
+P(T= \sum_{i=1}^{n} x_i) 
+&= e^{- \mu} \frac{(n\mu)^{t}}{(t)!}\\
+&= e^{- \mu} \frac{(n\mu)^{\sum_{i=1}^{n}x_i}}{(\sum_{i=1}^{n}x_i)!}
+\end{align}
 
+\begin{align}
+   \frac{ Pr(\vec{x_1}=x_1,\vec{x_2}=x_2 \ldots \myvec{x_n}=t-(x_1+x_2 \ldots \ldots x_{n-1}))}{T(\vec{x})=T(x_1,x2,\ldots,x_n)}\\
+    =\frac{e^{- \mu} \frac{(\mu)^{x_1}}{(x_1)!} \times
+    e^{- \mu} \frac{(\mu)^{x_2}}{(x_2)!} \cdots 
+    e^{- \mu} \frac{(\mu)^{t-(x_1,x_2 \ldots x_{n-1})}}{{(t-(x_1,x_2 \ldots x_{n-1}))!}}}{e^{-n \mu} \frac{(n\mu)^{t}}{(t)!}}\\
+    =\frac{(\sum_{i=1}^{n} x_i)!}{x_1!,x_2!\ldots x_n! n!}
+\end{align}
+$T(\vec{x})=\sum_{i=1}^{n} x_i$ is sufficient for $\mu.$
+
+The expression which we got can be seen that from both the approaches w matches !!\\
 \end{document}
 
         
