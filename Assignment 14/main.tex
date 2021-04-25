@@ -94,7 +94,64 @@ r is common. Ratio=$\frac{1}{4}$
 So answer is 0.50/0.75
 
 = 2/3
+\subsection{MARKOV CHAIN APPROACH}
+\textbf{Probabilities at nth toss}
+Probabilities at zero toss- $P_0=(1,0,0)$\\
+Probabilities after one toss-$P_0=(0.5,0.5,0)$
+Each state has the vector of probabilities for going to another state -\\
+collecting it together to form matrix\\
+\begin{math}
+M_3=\left[
+\begin{array}{ccc}
+     0.5 & 0.5 & 0  \\
+     0.5 & 0 & 0.5 \\
+     0 & 0 & 1
+\end{array}
+\right]
+\end{math}
+\\
+\\
+\begin{tikzpicture}[font=\sffamily]
 
+        % Setup the style for the states
+        \tikzset{node style/.style={state, 
+                                    minimum width=2cm,
+                                    line width=1mm,
+                                    fill=gray!20!white}}
+
+       % Draw the states
+        \node[node style] at (0, 0)     (C1)     {C1};
+        \node[node style] at (6, 0)     (C2)     {C2};
+        \node[node style] at (3, -5.196) (C3) {C3};
+
+        % Connect the states with arrows
+        \draw[every loop,
+              auto=right,
+              line width=1mm,
+              >=latex,
+              draw=orange,
+              fill=orange]
+            (C1)     edge[bend right=20]            node {0} (C3)
+            (C1)     edge[bend right=20]            node {0.5} (C2)
+            (C1)     edge[loop above]            node {0.5} (C1)
+            (C2)     edge[loop above]            node {0} (C2)
+            (C2)     edge[bend right=20, auto=left] node {0.5} (C3)
+            (C2)     edge[bend right=20, auto=left] node {0.5} (C1)
+            (C3) edge[bend right=20]            node {0} (C2)
+            (C3) edge[bend right=20, auto=left] node {0} (C1)
+            (C3)     edge[loop below]            node {1} (C3);
+    \end{tikzpicture}
+ Note that:Above drawn markov chain is 3 states first order time homogeneous markov chain as transition probabilities are depending only on last one state.\\
+ Note that:Above drawn markov chain is 3 states first order time homogeneous markov chain as transition probabilities are depending only on last one state.\\
+ 
+We can get $P_1$ by multiplying $P_0$ with $M_3$.\\
+$P_1=P_0 \times M_3$\\
+Similarly to get $P_2$ ,we can multiply $P_1$ with $M_3$\\
+$P_2=P_1 \times M_3= P_0 \times M_3^2$\\
+So,in general $P_n=P_0 \times M_3^n$\\
+here,n is number of tosses.\\
+but n should be odd for our problem.\\
+It is calculated for upto 100 tosses in python program.\\
 \end{document}
 
         
