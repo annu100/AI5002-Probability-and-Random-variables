@@ -67,17 +67,25 @@ the probability of error for an optimum receiver
 will be-
 
 \section{SOLUTIONS}
+let crossover probability=$p$\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics{channel_diag.png}
+    \caption{Channel transition diagram}
+    \label{fig:Channel transition diagram}
+\end{figure}q
 \begin{flushleft}
+$x_0$=0,$x_1$=1,$y_0$=0,$y_1$=1 for binary channel\\
 Let $x_0$ and $x_1$ are two binary transmitted symbols.\\
 $y_0$ and $y_1$ are recieved symbols.\\
 transition probability=$Pr(y_1|x_0)$=$Pr(y_0|x_1)$
 Given data-\\
 $Pr(x_0)=\frac{9}{10}$\\
 $Pr(x_1)=1-\frac{9}{10}=\frac{1}{10}$\\
-$Pr(y_1|x_0)=\frac{1}{8}$\\
-$Pr(y_0|x_1)=\frac{1}{8}$\\
-$Pr(y_0|x_0)=1-\frac{1}{8}=\frac{9}{10}$\\
-$Pr(y_1|x_1)=1-\frac{1}{8}=\frac{9}{10}$\\
+$Pr(y_1|x_0)=p=\frac{1}{8}$\\
+$Pr(y_0|x_1)=p=\frac{1}{8}$\\
+$Pr(y_0|x_0)=1-p=1-\frac{1}{8}=\frac{9}{10}$\\
+$Pr(y_1|x_1)=1-p=1-\frac{1}{8}=\frac{9}{10}$\\
 Calculating probability values for MAP critera -
 \end{flushleft}
 
@@ -108,11 +116,13 @@ Pr(y_0|x_0) \times Pr(x_0)>Pr(y_0|x_1) \times Pr(x_1)
 So,when a symbol is recieved is recieved as $y_0$ ,the decision can be made in favour of $x_0$ in an optimum way.\\
 As\\
 \begin{align}
-Pr(y_0|x_0)*Pr(x_0)>Pr(y_0|x_1)*Pr(x_1)
+Pr(y_0|x_0) \times Pr(x_0)>Pr(y_0|x_1) \times Pr(x_1)\\
+=(1-p) \times \frac{9}{10}> p \times \frac{1}{10}
 \end{align}
 So,when a symbol is recieved is recieved as $y_0$ ,the decision can be made in favour of $x_0$ in an optimum way.\\
 \begin{align}
-Pr(y_1|x_0) \times Pr(x_0)>Pr(y_1|x_1) \times Pr(x_1)
+Pr(y_1|x_0) \times Pr(x_0)>Pr(y_1|x_1) \times Pr(x_1)\\
+=p \times \frac{9}{10}>(1-p) \times \frac{1}{10}
 \end{align}
 So,when a symbol is recieved is recieved as $y_1$ ,the decision can be made in favour of $x_0$ in an optimum way.\\
 So,for the given BSC channel ,with optimum reciver ,both the recieved symbols will be decoded as $x_0$.\\
@@ -121,4 +131,3 @@ so,$Pr(error)=Pr(x_1)=\frac{1}{10}$
 \end{document}
 
         
-
