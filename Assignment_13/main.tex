@@ -67,6 +67,7 @@ the probability of error for an optimum receiver
 will be-
 
 \section{SOLUTIONS}
+\begin{flushleft}
 Let $x_0$ and $x_1$ are two binary transmitted symbols.\\
 $y_0$ and $y_1$ are recieved symbols.\\
 transition probability=$Pr(y_1|x_0)$=$Pr(y_0|x_1)$
@@ -78,39 +79,41 @@ $Pr(y_0|x_1)=\frac{1}{8}$\\
 $Pr(y_0|x_0)=1-\frac{1}{8}=\frac{9}{10}$\\
 $Pr(y_1|x_1)=1-\frac{1}{8}=\frac{9}{10}$\\
 Calculating probability values for MAP critera -
+\end{flushleft}
+
 \begin{align}
- Pr(y_0|x_0)*Pr(x_0) &= \frac{7}{8} *\frac{9}{10}
+ Pr(y_0|x_0) \times Pr(x_0) &= \frac{7}{8} \times \frac{9}{10} \\
                      &= \frac{63}{80}
 \end{align}
 \begin{align}
- Pr(y_0|x_1)*Pr(x_1) &= \frac{1}{8} *\frac{1}{10}
+ Pr(y_0|x_1) \times Pr(x_1) &= \frac{1}{8} \times \frac{1}{10} \\
                      &= \frac{1}{80}
 \end{align}
 \begin{align}
- Pr(y_1|x_0)*Pr(x_0) &= \frac{1}{8} *\frac{9}{10}
+ Pr(y_1|x_0) \times Pr(x_0) &= \frac{1}{8} \times \frac{9}{10} \\
                      &= \frac{9}{80}
 \end{align}
 \begin{align}
- Pr(y_1|x_1)*Pr(x_1) &= \frac{7}{8} *\frac{1}{10}
+ Pr(y_1|x_1) \times Pr(x_1) &= \frac{7}{8} \times \frac{1}{10}\\
                      &= \frac{7}{80}
 \end{align}
 Now according to M.A.P criteria at reciever -\\
-\begin{math}
-Pr(y_0|x_0)*Pr(x_0)>Pr(y_0|x_1)*Pr(x_1)\\
-\end{math}
+\begin{align}
+Pr(y_0|x_0) \times Pr(x_0)>Pr(y_0|x_1) \times Pr(x_1)
+\end{align}
 So,when a symbol is recieved is recieved as $y_0$ ,the decision can be made in favour of $x_0$ in an optimum way.\\
-\begin{math}
-Pr(y_0|x_0)*Pr(x_0)>Pr(y_0|x_1)*Pr(x_1)\\
-\end{math}
+\begin{align}
+Pr(y_0|x_0) \times Pr(x_0)>Pr(y_0|x_1) \times Pr(x_1)
+\end{align}
 So,when a symbol is recieved is recieved as $y_0$ ,the decision can be made in favour of $x_0$ in an optimum way.\\
 As\\
-\begin{math}
-Pr(y_0|x_0)*Pr(x_0)>Pr(y_0|x_1)*Pr(x_1)\\
-\end{math}
+\begin{align}
+Pr(y_0|x_0)*Pr(x_0)>Pr(y_0|x_1)*Pr(x_1)
+\end{align}
 So,when a symbol is recieved is recieved as $y_0$ ,the decision can be made in favour of $x_0$ in an optimum way.\\
-\begin{math}
-Pr(y_1|x_0)*Pr(x_0)>Pr(y_1|x_1)*Pr(x_1)\\
-\end{math}
+\begin{align}
+Pr(y_1|x_0) \times Pr(x_0)>Pr(y_1|x_1) \times Pr(x_1)
+\end{align}
 So,when a symbol is recieved is recieved as $y_1$ ,the decision can be made in favour of $x_0$ in an optimum way.\\
 So,for the given BSC channel ,with optimum reciver ,both the recieved symbols will be decoded as $x_0$.\\
 Hence,the probability of error is equal to probability of transmitting $x_1$.\\
